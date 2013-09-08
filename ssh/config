@@ -1,0 +1,54 @@
+Host e5login
+   Hostname login.e5.physik.tu-dortmund.de
+   IdentityFile ~/.ssh/id_rsa.phido
+   User rniet
+   ForwardX11 yes
+   ForwardX11Trusted yes
+
+Host phido1
+   Hostname hpc-gw1.phido.physik.tu-dortmund.de
+   IdentityFile ~/.ssh/id_rsa.phido
+   User rniet
+   ProxyCommand ssh rniet@login.e5.physik.tu-dortmund.de nc %h %p
+   ForwardX11 yes
+   ForwardX11Trusted yes
+
+Host phido2
+   Hostname hpc-gw2.phido.physik.tu-dortmund.de
+   IdentityFile ~/.ssh/id_rsa.phido
+   User rniet
+   ProxyCommand ssh rniet@login.e5.physik.tu-dortmund.de nc %h %p
+   ForwardX11 yes
+   ForwardX11Trusted yes
+
+Host lhcb.e5
+   Hostname lhcb.e5.physik.tu-dortmund.de
+   IdentityFile ~/.ssh/id_rsa.phido
+   User rniet
+   ProxyCommand ssh rniet@login.e5.physik.tu-dortmund.de nc %h %p
+   ForwardX11 yes
+   ForwardX11Trusted yes
+   ForwardAgent yes
+
+Host klaus-wacker
+   Hostname 129.217.160.22
+   IdentityFile ~/.ssh/id_rsa.phido
+   User rniet
+   ProxyCommand ssh rniet@login.e5.physik.tu-dortmund.de nc %h %p
+   ForwardX11 yes
+   ForwardX11Trusted yes
+   ForwardAgent yes
+
+Host lxplus
+   Hostname lxplus.cern.ch
+   User rniet
+   ForwardX11 yes
+   ForwardX11Trusted yes
+
+Host git.e5.physik.tu-dortmund.de
+   ProxyCommand ssh rniet@login.e5.physik.tu-dortmund.de nc %h %p
+
+Host github.com
+   Hostname github.com
+   IdentityFile ~/.ssh/github_rsa
+

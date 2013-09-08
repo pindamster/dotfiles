@@ -1,0 +1,2 @@
+#Make LHCbPythonModules available in python
+export PYTHONPATH=/Users/rniet/Repositories/git/e5/LHCbAnalysis/lhcbpythonmodules:$PYTHONPATH
