@@ -20,3 +20,11 @@ set softtabstop=2     " Use 2 colums for tab with TAB
 " Keep selection when indenting a block
 vnoremap < <gv2h
 vnoremap > >gv2l
+
+" Use 256 color schemes
+set t_Co=256
+
+" Use the 256 optimized molokai scheme
+let g:rehash256 = 1
+color molokai
+set background=dark
