@@ -28,3 +28,7 @@ set t_Co=256
 let g:rehash256 = 1
 color molokai
 set background=dark
+
+" Map tab using to control hjkl
+map <up> :tabr<cr>
+map <down> :tabl<cr>

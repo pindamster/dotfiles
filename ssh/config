@@ -1,3 +1,5 @@
+ServerAliveInterval 60
+
 Host e5login
    Hostname login.e5.physik.tu-dortmund.de
    IdentityFile ~/.ssh/id_rsa.phido
@@ -31,12 +33,10 @@ Host lhcb.e5
    ForwardAgent yes
 
 Host klaus-wacker
-   Hostname 10.141.1.200
-   #Hostname 129.217.160.22
+   Hostname 129.217.160.22
    IdentityFile ~/.ssh/id_rsa.phido
    User rniet
-   ProxyCommand ssh phido2 nc %h %p
-   #ProxyCommand ssh rniet@login.e5.physik.tu-dortmund.de nc %h %p
+   ProxyCommand ssh rniet@login.e5.physik.tu-dortmund.de nc %h %p
    ForwardX11 yes
    ForwardX11Trusted yes
    ForwardAgent yes
@@ -53,4 +53,3 @@ Host git.e5.physik.tu-dortmund.de
 Host github.com
    Hostname github.com
    IdentityFile ~/.ssh/github_rsa
-
