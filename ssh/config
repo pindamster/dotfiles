@@ -7,6 +7,14 @@ Host e5login
    ForwardX11 yes
    ForwardX11Trusted yes
 
+Host eve
+   Hostname 129.217.160.20
+   IdentityFile ~/.ssh/id_rsa.phido
+   User rniet
+   ProxyCommand ssh rniet@login.e5.physik.tu-dortmund.de nc %h %p
+   ForwardX11 yes
+   ForwardX11Trusted yes
+
 Host phido1
    Hostname hpc-gw1.phido.physik.tu-dortmund.de
    IdentityFile ~/.ssh/id_rsa.phido
