@@ -4,7 +4,7 @@
 [ -s ~/.bash_aliases ] && source ~/.bash_aliases
 
 #Load git autocompletion
-[ -s ~/.git-completion.bash ] && source .git-completion.bash
+[ -s ~/.git-completion.bash ] && source ~/.git-completion.bash
 
 #Using ROOT in python
 export ROOTSYS=/usr/local/Cellar/root/5.34.04
@@ -18,4 +18,4 @@ export LD_LIBRARY_PATH=$ROOTSYS/lib/root:$LD_LIBRARY_PATH
 # Setting Python Startup Var
 export PYTHONSTARTUP=/Users/rniet/.pythonrc
 
-[ -s ~/.pythonpath ] && source .pythonpath
+[ -s ~/.pythonpath ] && source ~/.pythonpath
