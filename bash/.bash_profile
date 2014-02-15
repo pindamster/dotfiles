@@ -13,7 +13,7 @@ export LD_LIBRARY_PATH=$ROOTSYS/lib/root:$LD_LIBRARY_PATH
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
-export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}
+# export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}
 
 # Setting Python Startup Var
 export PYTHONSTARTUP=/Users/rniet/.pythonrc
