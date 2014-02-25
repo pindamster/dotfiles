@@ -1,5 +1,6 @@
 # Aliases for file listing
-alias ls='ls --color'
+[[ $OSTYPE!="darwin13" ]] && alias ls='ls --color'
+[[ $OSTYPE=="darwin13" ]] && alias ls='ls -G'
 alias ll='ls -lh'
 alias la='ll -a'
 
