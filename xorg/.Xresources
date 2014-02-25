@@ -26,7 +26,6 @@
 *color7  : #D3D7CF
 *color15 : #EEEEEC
 
-URxvt*borderColor : Red
 URxvt*scrollBar: false
 URxvt*saveLines: 32767
 URxvt*font: xft:DejaVu Sans Mono:pixelsize=13
