@@ -1,7 +1,9 @@
 # Aliases for file listing
-alias ls='ls -G'
+alias ls='ls --color'
 alias ll='ls -lh'
 alias la='ll -a'
+
+[[ -f /usr/bin/xscreensaver ]] && alias lock='xscreensaver-command -lock'
 
 # Mounting
 alias mountKlaus='sshfs klaus-wacker:/home/rniet /Users/rniet/Mountpoint -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=KlausWackerHome'

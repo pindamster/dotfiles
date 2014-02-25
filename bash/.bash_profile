@@ -1,21 +1,24 @@
-#
-# LOAD ALIASES
-#
-[ -s ~/.bash_aliases ] && source ~/.bash_aliases
+# Source .bashrc
+[ -f $HOME/.bashrc ] && source $HOME/.bashrc
+# Define aliases
+[ -s $HOME/.bash_aliases ] && source $HOME/.bash_aliases
+# If keychain prog exists run it for managing ssh-agent (This is not the OsX keychain)
+# [ -s /usr/bin/keychain ] && eval $(keychain --eval --agents ssh -Q --quiet id_rsa.phido github_rsa)
+[ -s /usr/bin/keychain ] && keychain id_rsa.phido github_rsa && source $HOME/.keychain/$HOSTNAME-sh
 
-#Load git autocompletion
-[ -s ~/.git-completion.bash ] && source ~/.git-completion.bash
+# Load git autocompletion
+[ -s $HOME/.git-completion.bash ] && source $HOME/.git-completion.bash
 
-#Using ROOT in python
-export ROOTSYS=/usr/local/Cellar/root/5.34.04
-export PYTHONPATH=$ROOTSYS/lib/root
-export LD_LIBRARY_PATH=$ROOTSYS/lib/root:$LD_LIBRARY_PATH
+# Load python settings
+[ -s $HOME/.pythonpath ] && source $HOME/.pythonpath
 
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-# export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}
+# Using ROOT in python
+# export ROOTSYS=/usr/local/Cellar/root/5.34.04
+# export PYTHONPATH=$ROOTSYS/lib/root
+# export LD_LIBRARY_PATH=$ROOTSYS/lib/root:$LD_LIBRARY_PATH
 
 # Setting Python Startup Var
-export PYTHONSTARTUP=/Users/rniet/.pythonrc
+export PYTHONSTARTUP=$HOME/.pythonrc
 
-[ -s ~/.pythonpath ] && source ~/.pythonpath
+# Define bash prompt
+export PS1='[\u@\h \W]\$ '
