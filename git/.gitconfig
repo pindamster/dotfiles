@@ -21,6 +21,8 @@
     pushNonFastForward = false
     resolveConflict    = false
     detachedHead       = false
+[push]
+    default = matching
 [alias]
     n                  = clone
     p                  = pull
