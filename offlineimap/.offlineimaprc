@@ -1,0 +1,69 @@
+[general]
+ui = TTY.TTYUI
+accounts = uni, cern
+pythonfile=~/.offlineimap.py
+fsync = False
+maxsyncaccounts = 1
+
+[Account uni]
+localrepository = uni-local
+remoterepository = uni-remote
+status_backend = sqlite
+autorefresh=5
+quick=10
+
+[Repository uni-local]
+type = Maildir
+localfolders = ~/.mail/uni
+sep = /
+
+folderfilter = lambda folder: folder in ['INBOX', 'archive', 'sent', 'trash', 'drafts']
+maxconnections = 3
+
+nametrans = lambda folder: 'INBOX.' + folder.title() if folder != 'INBOX' else 'INBOX'
+
+[Repository uni-remote]
+type = IMAP
+ssl = yes
+remotehost = unimail.uni-dortmund.de
+remoteport = 993
+remoteusereval = get_username('unimail.uni-dortmund.de')
+remotepasseval = get_password('unimail.uni-dortmund.de')
+realdelete = no
+cert_fingerprint = fa4831c300be515281657dabe4b5a32c0f370da4
+maxconnections = 3
+keepalive=30
+holdconnectionopen = yes
+
+nametrans = lambda folder: re.sub(r'INBOX\.(.+)', r'\1', folder).lower() if folder != 'INBOX' else 'INBOX'
+
+folderfilter = lambda folder: folder in ['INBOX','INBOX.Sent','INBOX.Archive','INBOX.Trash','INBOX.Drafts']
+
+[Account cern]
+localrepository = cern-local
+remoterepository = cern-remote
+status_backend = sqlite
+autorefresh=5
+quick=10
+
+[Repository cern-local]
+type = Maildir
+localfolders = ~/.mail/cern
+sep = /
+
+maxconnections = 3
+
+[Repository cern-remote]
+type = IMAP
+ssl = yes
+remotehost = imap.cern.ch
+remoteport = 993
+remoteusereval = get_username('imap.cern.ch')
+remotepasseval = get_password('imap.cern.ch')
+realdelete = no
+cert_fingerprint = 8378887fb9a186fc073125e6b28f88802fa0663c
+maxconnections = 3
+keepalive=30
+holdconnectionopen = yes
+
+# vim: ft=cfg tw=0
