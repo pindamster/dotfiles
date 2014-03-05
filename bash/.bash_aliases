@@ -7,8 +7,9 @@ alias la='ll -a'
 [[ -f /usr/bin/xscreensaver ]] && alias lock='xscreensaver-command -lock'
 
 # Mounting
-alias mountKlaus='sshfs klaus-wacker:/home/rniet /Users/rniet/Mountpoint -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=KlausWackerHome'
-alias unmountKlaus='umount -f ~/Desktop/KlausWackerHome'
+alias mountKlaus='sshfs klaus:/home/rniet $HOME/mounts/klaus -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks'
+alias mountEve='sshfs klaus:/home/rniet $HOME/mounts/eve -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks'
+alias mountLhcb='sshfs klaus:/home/rniet $HOME/mounts/lhcb -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks'
 
 # Copy pwd to Mac clipboard
 alias pwdc="pwd | tr -d '\n' | pbcopy"
