@@ -9,6 +9,6 @@ set postponed = "+uni/drafts"
 set from     = "Ramon.Niet@tu-dortmund.de"
 set sendmail = "/usr/bin/msmtp -a uni"
 set sendmail_wait = 0
-unset record
 
+set copy = yes
 #vim: ft=muttrc

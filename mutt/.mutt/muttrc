@@ -95,7 +95,7 @@ bind pager R  group-reply
 # View attachments properly.
 bind attach <return> view-mailcap
 
-source ~/.mutt/cern.muttrc
+source ~/.mutt/uni.muttrc
 
 # Mailboxes to show in the sidebar.
 mailboxes +alias/Uni-Inbox \
@@ -107,7 +107,11 @@ mailboxes +alias/Uni-Inbox \
 
 # Folder hooks
 folder-hook cern/* source ~/.mutt/cern.muttrc
+folder-hook alias/Cern-Inbox source ~/.mutt/cern.muttrc
+folder-hook alias/Cern-Sent source ~/.mutt/cern.muttrc
 folder-hook uni/* source ~/.mutt/uni.muttrc
+folder-hook alias/Uni-Inbox source ~/.mutt/uni.muttrc
+folder-hook alias/Uni-Sent source ~/.mutt/uni.muttrc
 
 # Compose View Options -------------------------------
 set realname = "Ramon Niet"          # who am i?

@@ -9,6 +9,5 @@ set postponed = "+cern/Drafts"
 set from     = "ramon.niet@cern.ch"
 set sendmail = "/usr/bin/msmtp -a cern"
 set sendmail_wait = 0
-unset record
 
 #vim: ft=muttrc
