@@ -43,3 +43,6 @@ set background=dark
 " Map tab using to control hjkl
 map <up> :tabr<cr>
 map <down> :tabl<cr>
+
+" Read tags file
+set tags=./tags;/
