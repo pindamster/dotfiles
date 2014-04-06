@@ -1,5 +1,15 @@
 syntax on
-set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+
+set laststatus=2  " Display status bar always
+" spiiph's
+set statusline=   " clear the statusline for when vimrc is reloaded
+set statusline+=%<\                       " cut at start
+set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
+set statusline+=%-40f\                    " path
+set statusline+=%=%1*%y%*%*\              " file type
+set statusline+=%10((%l,%c)%)\            " line and column
+set statusline+=%P                        " percentage of file
+
 set nu      "Activate line numbers"
 
 " Unmap the arrow keys
