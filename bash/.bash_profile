@@ -8,8 +8,8 @@
 # [ -s /usr/bin/keychain ] && keychain id_rsa.phido github_rsa && source $HOME/.keychain/$HOSTNAME-sh
 
 # Using the Gnome Keyring instead...
-SSH_AUTH_SOCK=`ss -xl | grep -o '/run/user/1000/keyring-HtwLKG/ssh'`
-[ -z "$SSH_AUTH_SOCK" ] || export SSH_AUTH_SOCK
+# SSH_AUTH_SOCK=`ss -xl | grep -o '/run/user/1000/keyring-HtwLKG/ssh'`
+# [ -z "$SSH_AUTH_SOCK" ] || export SSH_AUTH_SOCK
 
 # Load git autocompletion
 [ -s $HOME/.git-completion.bash ] && source $HOME/.git-completion.bash
