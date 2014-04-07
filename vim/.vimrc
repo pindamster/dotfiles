@@ -46,3 +46,10 @@ map <down> :tabl<cr>
 
 " Read tags file
 set tags=./tags;/
+
+filetype plugin on
+
+if bufwinnr(1)
+  map + <C-W>+
+  map - <C-W>-
+endif
