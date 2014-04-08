@@ -1,14 +1,35 @@
 syntax on
 
+"set mouse=a
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Plugin 'gmarik/vundle'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'paranoida/vim-airlineish'
+Plugin 'scrooloose/nerdtree'
+Plugin 'taglist.vim'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '>'
+let g:airline_theme = 'airlineish'
+" let g:airline_powerline_fonts = 1
+
 set laststatus=2  " Display status bar always
 " spiiph's
-set statusline=   " clear the statusline for when vimrc is reloaded
-set statusline+=%<\                       " cut at start
-set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
-set statusline+=%-40f\                    " path
-set statusline+=%=%1*%y%*%*\              " file type
-set statusline+=%10((%l,%c)%)\            " line and column
-set statusline+=%P                        " percentage of file
+" set statusline=   " clear the statusline for when vimrc is reloaded
+" set statusline+=%<\                       " cut at start
+" set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
+" set statusline+=%-40f\                    " path
+" set statusline+=%=%1*%y%*%*\              " file type
+" set statusline+=%10((%l,%c)%)\            " line and column
+" set statusline+=%P                        " percentage of file
 
 set nu      "Activate line numbers"
 
@@ -53,3 +74,5 @@ if bufwinnr(1)
   map + <C-W>+
   map - <C-W>-
 endif
+
+map <C-n> :NERDTreeToggle<CR>
