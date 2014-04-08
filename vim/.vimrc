@@ -13,13 +13,13 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'paranoida/vim-airlineish'
 Plugin 'scrooloose/nerdtree'
-Plugin 'taglist.vim'
+" Plugin 'taglist.vim'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '>'
 let g:airline_theme = 'airlineish'
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 set laststatus=2  " Display status bar always
 " spiiph's
