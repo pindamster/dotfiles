@@ -13,7 +13,8 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'paranoida/vim-airlineish'
 Plugin 'scrooloose/nerdtree'
-" Plugin 'taglist.vim'
+Plugin 'valloric/YouCompleteMe'
+Plugin 'taglist.vim'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
