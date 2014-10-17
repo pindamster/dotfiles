@@ -1,6 +1,6 @@
 # Aliases for file listing
-[[ $OSTYPE != "darwin13" ]] && alias ls='ls --color'
-[[ $OSTYPE == "darwin13" ]] && alias ls='ls -G'
+[[ $OSTYPE != "darwin14" ]] && alias ls='ls --color'
+[[ $OSTYPE == "darwin14" ]] && alias ls='ls -G'
 alias ll='ls -lh'
 alias la='ll -a'
 
@@ -11,6 +11,7 @@ alias mountKlaus='sshfs klaus:/home/rniet $HOME/mounts/klaus -F ~/.ssh/config -o
 alias mountEve='sshfs eve:/home/rniet $HOME/mounts/eve -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=eve'
 alias mountLhcb='sshfs lhcb:/home/rniet $HOME/mounts/lhcb -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=lhcb'
 alias mountPhiDo='sshfs phido1:/home/rniet $HOME/mounts/phido -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=phido'
+alias mountStorage03='sshfs phido1:/net/storage03/data/users/rniet $HOME/mounts/storage03 -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=storage03'
 
 [[ $OSTYPE == "darwin13" ]] && alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 
