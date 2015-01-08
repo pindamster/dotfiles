@@ -1,15 +1,20 @@
 # Aliases for file listing
-[[ $OSTYPE != "darwin13" ]] && alias ls='ls --color'
-[[ $OSTYPE == "darwin13" ]] && alias ls='ls -G'
+[[ $OSTYPE != "darwin14" ]] && alias ls='ls --color'
+[[ $OSTYPE == "darwin14" ]] && alias ls='ls -G'
 alias ll='ls -lh'
 alias la='ll -a'
 
-[[ -f /usr/bin/xscreensaver ]] && alias lock='xscreensaver-command -lock'
-
 # Mounting
-alias mountKlaus='sshfs klaus:/home/rniet $HOME/mounts/klaus -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks'
-alias mountEve='sshfs klaus:/home/rniet $HOME/mounts/eve -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks'
-alias mountLhcb='sshfs klaus:/home/rniet $HOME/mounts/lhcb -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks'
+alias mountklaus='sshfs klaus:/home/rniet $HOME/mounts/klaus -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=klaus'
+alias mounteve='sshfs eve:/home/rniet $HOME/mounts/eve -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=eve'
+alias mountlhcb='sshfs lhcb:/home/rniet $HOME/mounts/lhcb -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=lhcb'
+alias mountphido='sshfs phido1:/home/rniet $HOME/mounts/phido -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=phido'
+alias mountstorage03='sshfs phido1:/net/storage03/data/users/rniet $HOME/mounts/storage03 -F ~/.ssh/config -o auto_cache,reconnect,follow_symlinks,volname=storage03'
 
-# Copy pwd to Mac clipboard
-alias pwdc="pwd | tr -d '\n' | pbcopy"
+function mountAll(){
+  mountklaus
+  mounteve
+  mountlhcb
+  mountphido
+  mountstorage03
+}
