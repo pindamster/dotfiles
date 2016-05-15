@@ -23,7 +23,16 @@
 # export LD_LIBRARY_PATH=$ROOTSYS/lib/root:$LD_LIBRARY_PATH
 
 # Setting Python Startup Var
-export PYTHONSTARTUP=$HOME/.pythonrc
+# export PYTHONSTARTUP=$HOME/.pythonrc
 
 # Define bash prompt
 export PS1='[\u@\h \W]\$ '
+
+export TUPLESROOT='/fhgfs/groups/e5/lhcb/NTuples/B2CC/Bd2JpsiKS/Jpsi2ee/'
+export TUPLESROOT_MC='/fhgfs/groups/e5/lhcb/NTuples/B2CC/Bd2JpsiKS/Jpsi2ee/MC/Sim08f/2011+2012/'
+export TUPLESROOT_DATA='/fhgfs/groups/e5/lhcb/NTuples/B2CC/Bd2JpsiKS/Jpsi2ee/Data/combined/'
+
+export HISTCONTROL=ignoredups
+
+# added by Anaconda 2.1.0 installer
+export PATH="/Users/rniet/anaconda/bin:$PATH"

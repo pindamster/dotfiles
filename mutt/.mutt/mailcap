@@ -1,2 +1,0 @@
-# PDFs
-application/pdf; ~/.mutt/view_attachment.sh %s pdf

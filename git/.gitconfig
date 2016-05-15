@@ -25,7 +25,7 @@
     default = matching
 [alias]
     n                  = clone
-    p                  = pull
+    p                  = pull --rebase
     o                  = checkout
     c                  = commit
     s                  = status -sb

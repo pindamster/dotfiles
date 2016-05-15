@@ -76,3 +76,7 @@ if bufwinnr(1)
 endif
 
 map <C-n> :NERDTreeToggle<CR>
+
+" Solves annoying behaviour of backspace in newer version
+set backspace=2
+set autoindent

@@ -1,6 +1,6 @@
 # Aliases for file listing
-[[ $OSTYPE != "darwin14" ]] && alias ls='ls --color'
-[[ $OSTYPE == "darwin14" ]] && alias ls='ls -G'
+[[ $OSTYPE != "darwin15" ]] && alias ls='ls --color'
+[[ $OSTYPE == "darwin15" ]] && alias ls='ls -G'
 alias ll='ls -lh'
 alias la='ll -a'
 
@@ -23,13 +23,13 @@ function mountAll(){
 
 function setROOT()
 {
-  export ROOTSYS=/afs/cern.ch/sw/lcg/app/releases/ROOT/5.34.34/x86_64-slc6-gcc48-opt/root
+  export ROOTSYS=/afs/cern.ch/sw/lcg/app/releases/ROOT/5.34.21/x86_64-slc6-gcc48-opt/root
   export PATH=$ROOTSYS/bin:$PATH
   export LD_LIBRARY_PATH=$ROOTSYS/lib:/usr/local/lib:$LD_LIBRARY_PATH
   export BOOST_ROOT=/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_71/Boost/1.55.0_python2.7/x86_64-slc6-gcc48-opt
   export BOOSTROOT=/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_71/Boost/1.55.0_python2.7/x86_64-slc6-gcc48-opt
   export LD_LIBRARY_PATH=$BOOST_ROOT/lib:$LD_LIBRARY_PATH
-  export ROOTVERS=5.34.34
+  export ROOTVERS=5.34.21
   export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
 }
 export -f setROOT
