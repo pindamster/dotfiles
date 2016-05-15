@@ -27,3 +27,7 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 
 # Define bash prompt
 export PS1='[\u@\h \W]\$ '
+export HISTCONTROL=ignoredups
+
+# added by Anaconda 2.1.0 installer
+export PATH="/Users/rniet/anaconda/bin:$PATH"
