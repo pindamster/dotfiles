@@ -13,7 +13,6 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'paranoida/vim-airlineish'
 Plugin 'scrooloose/nerdtree'
-Plugin 'valloric/YouCompleteMe'
 Plugin 'taglist.vim'
 
 let g:airline#extensions#tabline#enabled = 1
@@ -77,3 +76,7 @@ if bufwinnr(1)
 endif
 
 map <C-n> :NERDTreeToggle<CR>
+
+" Solves annoying behaviour of backspace in newer version
+set backspace=2
+set autoindent

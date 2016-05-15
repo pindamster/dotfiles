@@ -1,3 +1,7 @@
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -30,3 +34,5 @@ fi
 # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/.rvm/bin 
 export BOOST_ROOT=/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_68/Boost/1.55.0_python2.7/x86_64-slc6-gcc48-opt
+export CPTOYMCSYS=/home/rniet/storage03/software/cptoymc
+export EDITOR=vim
