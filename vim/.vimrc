@@ -85,6 +85,10 @@ endif
 
 map <C-n> :NERDTreeToggle<CR>
 
+" for better tab completion
+set wildmode=longest,list,full
+set wildmenu
+
 " Solves annoying behaviour of backspace in newer version
 set backspace=2
 set autoindent
