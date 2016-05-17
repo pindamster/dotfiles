@@ -49,6 +49,12 @@ set tabstop=2         " Interpret tab as 2 colums
 set shiftwidth=2      " Use 2 colums for shift with > or <
 set softtabstop=2     " Use 2 colums for tab with TAB
 
+" Window navigation via hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Keep selection when indenting a block
 vnoremap < <gv2h
 vnoremap > >gv2l
@@ -73,6 +79,8 @@ filetype plugin on
 if bufwinnr(1)
   map + <C-W>+
   map - <C-W>-
+  map > <C-W>>
+  map < <C-W><
 endif
 
 map <C-n> :NERDTreeToggle<CR>
