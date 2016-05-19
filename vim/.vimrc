@@ -7,17 +7,23 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/ctrlp.vim
 call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'paranoida/vim-airlineish'
-Plugin 'scrooloose/nerdtree'
 Plugin 'taglist.vim'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+" Plugin 'scrooloose/nerdtree'
+
+" map <C-n> :NERDTreeToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '>'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline_theme = 'airlineish'
 let g:airline_powerline_fonts = 1
 
@@ -31,7 +37,31 @@ set laststatus=2  " Display status bar always
 " set statusline+=%10((%l,%c)%)\            " line and column
 " set statusline+=%P                        " percentage of file
 
-set nu      "Activate line numbers"
+set cursorline
+set relativenumber      "Activate line numbers"
+function! Switchnu()
+    set nornu
+    set nu
+endfunc
+
+function! Switchrnu()
+    set nonu
+    set rnu
+endfunc
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    call Switchnu()
+  else
+    call Switchrnu()
+  endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<cr>
+
+autocmd InsertEnter * :call Switchnu()
+autocmd InsertLeave * :call Switchrnu()
+au FocusLost * :call Switchnu()
+au FocusGained * :call Switchrnu()
 
 " Unmap the arrow keys
 no <down> <Nop>
@@ -48,6 +78,12 @@ set expandtab         " Set tab to do real spaces
 set tabstop=2         " Interpret tab as 2 colums 
 set shiftwidth=2      " Use 2 colums for shift with > or <
 set softtabstop=2     " Use 2 colums for tab with TAB
+
+set splitbelow
+set splitright
+
+" Buffer navigation
+nnoremap <Leader>b :ls<CR>:b<Space>
 
 " Window navigation via hjkl
 nnoremap <C-h> <C-w>h
@@ -83,7 +119,6 @@ if bufwinnr(1)
   map < <C-W><
 endif
 
-map <C-n> :NERDTreeToggle<CR>
 
 " for better tab completion
 set wildmode=longest,list,full
