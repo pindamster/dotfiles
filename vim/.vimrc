@@ -17,6 +17,8 @@ Plugin 'taglist.vim'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 " Plugin 'scrooloose/nerdtree'
 
+let mapleader = ','
+
 " map <C-n> :NERDTreeToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
@@ -28,17 +30,10 @@ let g:airline_theme = 'airlineish'
 let g:airline_powerline_fonts = 1
 
 set laststatus=2  " Display status bar always
-" spiiph's
-" set statusline=   " clear the statusline for when vimrc is reloaded
-" set statusline+=%<\                       " cut at start
-" set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
-" set statusline+=%-40f\                    " path
-" set statusline+=%=%1*%y%*%*\              " file type
-" set statusline+=%10((%l,%c)%)\            " line and column
-" set statusline+=%P                        " percentage of file
 
 set cursorline
 set relativenumber      "Activate line numbers"
+
 function! Switchnu()
     set nornu
     set nu
@@ -84,6 +79,8 @@ set splitright
 
 " Buffer navigation
 nnoremap <Leader>b :ls<CR>:b<Space>
+nnoremap <Leader>t :tabnew %<CR>
+nnoremap <Leader>o :CtrlPMixed<CR>
 
 " Window navigation via hjkl
 nnoremap <C-h> <C-w>h
