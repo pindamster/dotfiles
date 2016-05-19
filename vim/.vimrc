@@ -34,6 +34,7 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'scrooloose/nerdcommenter.git'
 " Plugin 'scrooloose/nerdtree'
 
 filetype plugin on "Vundle stuff over
