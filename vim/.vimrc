@@ -25,7 +25,6 @@ set nocompatible  " be IMproved, required
 filetype off      " required for vundle stuff to work
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.vim/bundle/ctrlp.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
@@ -38,6 +37,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
+Plugin 'ctrlpvim/ctrlp'
 " Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
