@@ -19,6 +19,7 @@ set splitright
 set laststatus=2      " Display status bar always
 set cursorline
 set relativenumber   
+set hidden
 
 set nocompatible  " be IMproved, required
 filetype off      " required for vundle stuff to work
@@ -27,7 +28,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/ctrlp.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'paranoida/vim-airlineish'
@@ -67,6 +67,12 @@ noremap! <down> <Nop>
 noremap! <left> <Nop>
 noremap! <right> <Nop>
 noremap! <up> <Nop>
+
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
 
 function! Switchnu()
     set nornu
