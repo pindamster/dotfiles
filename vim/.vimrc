@@ -20,11 +20,13 @@ set laststatus=2      " Display status bar always
 set cursorline
 set relativenumber   
 
-filetype off     " required for vundle stuff to work
+set nocompatible  " be IMproved, required
+filetype off      " required for vundle stuff to work
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/ctrlp.vim
-call vundle#rc()
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'gmarik/vundle'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
@@ -38,6 +40,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 " Plugin 'scrooloose/nerdtree'
 
+call vundle#end()
 filetype plugin on "Vundle stuff over
 
 " Plugin configuration
