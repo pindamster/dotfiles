@@ -37,7 +37,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
-Plugin 'ctrlpvim/ctrlp'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
