@@ -1,10 +1,10 @@
 syntax on
-set t_Co=256
 
 " Use the 256 optimized molokai scheme
 let g:rehash256 = 1
-color molokai
+color Tomorrow-Night
 set background=dark
+set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h14
 
 set wildmode=longest,list,full  " for better tab completion
 set wildmenu                    " for better tab completion
@@ -38,7 +38,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin on "Vundle stuff over
@@ -97,7 +97,6 @@ autocmd InsertLeave * :call Switchrnu()
 au FocusLost * :call Switchnu()
 au FocusGained * :call Switchrnu()
 
-" map <C-n> :NERDTreeToggle<CR>
 
 "" Convinient window navigation via hjkl
 " nnoremap <C-h> <C-w>h
@@ -122,4 +121,7 @@ let mapleader = ','
 nnoremap <Leader>b :bp<CR>
 nnoremap <Leader>f :bn<CR>
 nnoremap <Leader>t :tabnew %<CR>
+
+map <Leader>n :NERDTreeToggle<CR>
+map <F8> :TagbarToggle<CR>
 nnoremap <Leader>o :CtrlPMixed<CR>
