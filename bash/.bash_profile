@@ -1,3 +1,6 @@
+export SHELL=/usr/local/bin/zsh
+exec /usr/local/bin/zsh -l
+
 set -o vi
 # Source .bashrc
 [ -f $HOME/.bashrc ] && source $HOME/.bashrc
