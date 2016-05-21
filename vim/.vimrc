@@ -1,59 +1,4 @@
 syntax on
-
-"set mouse=a
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Plugin 'gmarik/vundle'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'paranoida/vim-airlineish'
-Plugin 'scrooloose/nerdtree'
-Plugin 'taglist.vim'
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '>'
-let g:airline_theme = 'airlineish'
-let g:airline_powerline_fonts = 1
-
-set laststatus=2  " Display status bar always
-" spiiph's
-" set statusline=   " clear the statusline for when vimrc is reloaded
-" set statusline+=%<\                       " cut at start
-" set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
-" set statusline+=%-40f\                    " path
-" set statusline+=%=%1*%y%*%*\              " file type
-" set statusline+=%10((%l,%c)%)\            " line and column
-" set statusline+=%P                        " percentage of file
-
-set nu      "Activate line numbers"
-
-" Unmap the arrow keys
-no <down> <Nop>
-no <left> <Nop>
-no <right> <Nop>
-no <up> <Nop>
-
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-ino <up> <Nop>
-
-set expandtab         " Set tab to do real spaces
-set tabstop=2         " Interpret tab as 2 colums 
-set shiftwidth=2      " Use 2 colums for shift with > or <
-set softtabstop=2     " Use 2 colums for tab with TAB
-
-" Keep selection when indenting a block
-vnoremap < <gv2h
-vnoremap > >gv2l
-
-" Use 256 color schemes
 set t_Co=256
 
 " Use the 256 optimized molokai scheme
@@ -61,22 +6,120 @@ let g:rehash256 = 1
 color molokai
 set background=dark
 
-" Map tab using to control hjkl
-map <up> :tabr<cr>
-map <down> :tabl<cr>
+set wildmode=longest,list,full  " for better tab completion
+set wildmenu                    " for better tab completion
+set backspace=2       " Solves annoying behaviour of backspace in newer version
+set autoindent
+set expandtab         " Set tab to do real spaces
+set tabstop=2         " Interpret tab as 2 colums 
+set shiftwidth=2      " Use 2 colums for shift with > or <
+set softtabstop=2     " Use 2 colums for tab with TAB
+set splitbelow
+set splitright
+set laststatus=2      " Display status bar always
+set cursorline
+set relativenumber   
+set hidden
 
-" Read tags file
+set nocompatible  " be IMproved, required
+filetype off      " required for vundle stuff to work
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'paranoida/vim-airlineish'
+Plugin 'taglist.vim'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'majutsushi/tagbar'
+Plugin 'ctrlpvim/ctrlp'
+" Plugin 'scrooloose/nerdtree'
+
+call vundle#end()
+filetype plugin on "Vundle stuff over
+
+" Plugin configuration
+"" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline_theme = 'airlineish'
+let g:airline_powerline_fonts = 1
+
+"" Taglist
 set tags=./tags;/
 
-filetype plugin on
+" Remappings
+"" Unmap the arrow keys
+noremap <down> <Nop>
+noremap <left> <Nop>
+noremap <right> <Nop>
+noremap <up> <Nop>
+
+noremap! <down> <Nop>
+noremap! <left> <Nop>
+noremap! <right> <Nop>
+noremap! <up> <Nop>
+
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
+
+function! Switchnu()
+    set nornu
+    set nu
+endfunc
+
+function! Switchrnu()
+    set nonu
+    set rnu
+endfunc
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    call Switchnu()
+  else
+    call Switchrnu()
+  endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<cr>
+autocmd InsertEnter * :call Switchnu()
+autocmd InsertLeave * :call Switchrnu()
+au FocusLost * :call Switchnu()
+au FocusGained * :call Switchrnu()
+
+" map <C-n> :NERDTreeToggle<CR>
+
+"" Convinient window navigation via hjkl
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
+
+"" Keep selection when indenting a block
+vnoremap < <gv2h
+vnoremap > >gv2l
 
 if bufwinnr(1)
-  map + <C-W>+
-  map - <C-W>-
+  nnoremap + <C-W>+
+  nnoremap - <C-W>-
+  nnoremap > <C-W>>
+  nnoremap < <C-W><
 endif
 
-map <C-n> :NERDTreeToggle<CR>
-
-" Solves annoying behaviour of backspace in newer version
-set backspace=2
-set autoindent
+"" Leader Mappings
+let mapleader = ','
+""" Buffer navigation
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>t :tabnew %<CR>
+nnoremap <Leader>o :CtrlPMixed<CR>

@@ -1,3 +1,4 @@
+set -o vi
 # Source .bashrc
 [ -f $HOME/.bashrc ] && source $HOME/.bashrc
 # Define aliases
