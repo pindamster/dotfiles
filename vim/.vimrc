@@ -1,9 +1,4 @@
 syntax on
-
-" Use the 256 optimized molokai scheme
-let g:rehash256 = 1
-color Tomorrow-Night
-set background=dark
 set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h14
 
 set wildmode=longest,list,full  " for better tab completion
@@ -39,9 +34,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'chriskempson/base16-vim'
 call vundle#end()
 filetype plugin on "Vundle stuff over
+
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-tomorrow
+set background=dark
 
 " Plugin configuration
 "" Airline

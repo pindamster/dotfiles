@@ -41,3 +41,7 @@ export PATH=$PATH:$BD2JPSIEEKSROOT
 
 # added by Anaconda 2.2.0 installer
 export PATH="/home/rniet/anaconda/bin:$PATH"
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
