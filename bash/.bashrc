@@ -5,9 +5,6 @@ export LANGUAGE=en_US.UTF-8
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Define aliases
-[ -s $HOME/.bash_aliases ] && source $HOME/.bash_aliases
-
 # Only run this on linux E5 machines
 # This needs change, because there are linux machines
 # where the LHCbSoftware is not installed

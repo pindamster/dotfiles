@@ -1,5 +1,12 @@
-export SHELL=/usr/local/bin/zsh
-exec /usr/local/bin/zsh -l
+
+# Test if private version of zsh exists - otherwise use system installation
+if [[ -f $HOME/software/zsh/bin/zsh-5.2 ]]; then
+  export SHELL=$HOME/software/zsh/bin/zsh-5.2
+  exec $HOME/software/zsh/bin/zsh-5.2
+else
+  export SHELL=/usr/local/bin/zsh
+  exec /usr/local/bin/zsh -l
+fi
 
 set -o vi
 # Source .bashrc
