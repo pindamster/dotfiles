@@ -9,3 +9,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
 
 export EDITOR=vim
 export VISUAL=vim
+
+# From homebrew
+export PATH="/usr/local/sbin:$PATH"
