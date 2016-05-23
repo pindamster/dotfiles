@@ -12,3 +12,4 @@ export VISUAL=vim
 
 # From homebrew
 export PATH="/usr/local/sbin:$PATH"
+alias lhcbSetup="source /lhcbsoft/LHCbSoftwareSetup.sh"
