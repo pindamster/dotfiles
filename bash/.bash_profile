@@ -3,7 +3,7 @@
 if [[ -f $HOME/software/zsh/bin/zsh-5.2 ]]; then
   export SHELL=$HOME/software/zsh/bin/zsh-5.2
   exec $HOME/software/zsh/bin/zsh-5.2
-else
+elif [[ -f /usr/local/bin/zsh ]]; then
   export SHELL=/usr/local/bin/zsh
   exec /usr/local/bin/zsh -l
 fi
