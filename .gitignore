@@ -1,3 +1,4 @@
+*.swp
 ssh/.ssh/known_hosts
 vim/.vim/.netrwhist
 vim/.vim/bundle
