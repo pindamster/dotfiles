@@ -22,7 +22,6 @@ function setROOT()
   export ROOTVERS=5.34.21
   export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
 }
-export -f setROOT
 
 function setSherpa()
 {
@@ -30,7 +29,6 @@ function setSherpa()
   export PATH=$SHERPASYS/bin:$PATH
   export LD_LIBRARY_PATH=$SHERPASYS/lib:$LD_LIBRARY_PATH
 }
-export -f setSherpa
 
 function pyRootSetup()
 {
@@ -40,3 +38,9 @@ function pyRootSetup()
   export ROOTVERS=5.34.28 
   export LD_LIBRARY_PATH=/afs/cern.ch/sw/lcg/external/Boost/1.55.0_python2.7/x86_64-slc6-gcc47-opt/lib:$LD_LIBRARY_PATH 
 }
+
+if [ -n "$BASH_VERSION" ]; then
+  export -f setROOT
+  export -f pyRootSetup
+  export -f setSherpa
+fi
