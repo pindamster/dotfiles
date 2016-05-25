@@ -2,3 +2,5 @@
 ssh/.ssh/known_hosts
 vim/.vim/.netrwhist
 vim/.vim/bundle
+ssh/.ssh/id_rsa.phido
+ssh/.ssh/github_rsa
