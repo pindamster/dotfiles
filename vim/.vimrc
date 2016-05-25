@@ -24,6 +24,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+" Plugin 'scrooloose/syntastic'
 Plugin 'paranoida/vim-airlineish'
 Plugin 'taglist.vim'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
@@ -34,6 +35,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'chriskempson/base16-vim'
 call vundle#end()
 filetype plugin on "Vundle stuff over
@@ -46,6 +48,31 @@ set background=dark
 let g:NERDCompactSexyComs = 1
 let g:NERDSpaceDelims = 1
 
+
+"" Syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 1
+" let g:syntastic_enable_signs = 1
+" let g:syntastic_cpp_checkers=['clang_check']
+
+"" NERDTree-git-plugin
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
 "" Airline
 let g:airline#extensions#tabline#enabled = 1
