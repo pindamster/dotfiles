@@ -43,6 +43,10 @@ colorscheme base16-tomorrow
 set background=dark
 
 " Plugin configuration
+let g:NERDCompactSexyComs = 1
+let g:NERDSpaceDelims = 1
+
+
 "" Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
