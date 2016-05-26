@@ -41,16 +41,20 @@ function pyRootSetup()
   export LD_LIBRARY_PATH=/afs/cern.ch/sw/lcg/external/Boost/1.55.0_python2.7/x86_64-slc6-gcc47-opt/lib:$LD_LIBRARY_PATH 
 }
 
+it2prof() { echo -e "\033]50;SetProfile=$1\a" }
+
 function dark()
 {
   BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
   [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "switching to $BASE16_SHELL"
+  it2prof TomorrowDark
 }
 
 function light()
 {
   BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.light.sh"
   [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "switching to $BASE16_SHELL"
+  it2prof SolarizedLight
 }
 
 
