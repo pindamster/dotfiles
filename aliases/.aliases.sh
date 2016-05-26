@@ -41,13 +41,13 @@ function pyRootSetup()
   export LD_LIBRARY_PATH=/afs/cern.ch/sw/lcg/external/Boost/1.55.0_python2.7/x86_64-slc6-gcc47-opt/lib:$LD_LIBRARY_PATH 
 }
 
-function setDark()
+function dark()
 {
   BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
   [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "It becomes dark!"
 }
 
-function setLight()
+function light()
 {
   BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.light.sh"
   [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "IT becomes light!"
