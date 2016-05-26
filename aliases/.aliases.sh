@@ -44,17 +44,20 @@ function pyRootSetup()
 function dark()
 {
   BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
-  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "It becomes dark!"
+  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "switching to $BASE16_SHELL"
 }
 
 function light()
 {
-  BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.light.sh"
-  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "IT becomes light!"
+  BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.light.sh"
+  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "switching to $BASE16_SHELL"
 }
+
 
 if [ -n "$BASH_VERSION" ]; then
   export -f setROOT
   export -f pyRootSetup
   export -f setSherpa
+  export -f dark
+  export -f light
 fi
