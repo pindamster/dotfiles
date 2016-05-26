@@ -42,19 +42,30 @@ function pyRootSetup()
 }
 
 it2prof() { echo -e "\033]50;SetProfile=$1\a" }
+it2proftmux() { echo -e "\033Ptmux;\033\033]50;SetProfile=$1\007\033\\" }
 
 function dark()
 {
   BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
   [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "switching to $BASE16_SHELL"
-  it2prof TomorrowDark
+  if [ -n "$TMUX" ]; then
+    it2proftmux TomorrowDark
+  else
+    it2prof TomorrowDark
+  fi
+  export THEME_BACKGROUND="dark"
 }
 
 function light()
 {
   BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.light.sh"
   [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "switching to $BASE16_SHELL"
-  it2prof SolarizedLight
+  if [ -n "$TMUX" ]; then
+    it2proftmux SolarizedLight
+  else
+    it2prof SolarizedLight
+  fi
+  export THEME_BACKGROUND="light"
 }
 
 

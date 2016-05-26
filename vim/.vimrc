@@ -42,11 +42,21 @@ filetype plugin on "Vundle stuff over
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-tomorrow
-set background=dark
+if $THEME_BACKGROUND == "dark"
+  set background=dark
+else
+  set background=light
+endif
 
 " Plugin configuration
 let g:NERDCompactSexyComs = 1
 let g:NERDSpaceDelims = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
+
+"" Fugitive
+command Greview :Git! diff --staged
+nnoremap <leader>gr :Greview<cr>
 
 "" Syntastic
 " set statusline+=%#warningmsg#
