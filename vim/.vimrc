@@ -48,7 +48,6 @@ set background=dark
 let g:NERDCompactSexyComs = 1
 let g:NERDSpaceDelims = 1
 
-
 "" Syntastic
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -73,6 +72,9 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+
+"" CtrlP
+let g:ctrlp_follow_symlinks = 0
 
 "" Airline
 let g:airline#extensions#tabline#enabled = 1
