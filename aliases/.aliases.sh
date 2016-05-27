@@ -47,9 +47,10 @@ it2proftmux() { echo -e "\033Ptmux;\033\033]50;SetProfile=$1\007\033\\" }
 function dark()
 {
   BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
-  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "switching to $BASE16_SHELL"
+  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
   if [ -n "$TMUX" ]; then
     it2proftmux TomorrowDark
+    tmux setenv -g THEME_BACKGROUND dark
   else
     it2prof TomorrowDark
   fi
@@ -59,15 +60,15 @@ function dark()
 function light()
 {
   BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.light.sh"
-  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL && echo "switching to $BASE16_SHELL"
+  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
   if [ -n "$TMUX" ]; then
     it2proftmux SolarizedLight
+    tmux setenv -g THEME_BACKGROUND light
   else
     it2prof SolarizedLight
   fi
   export THEME_BACKGROUND="light"
 }
-
 
 if [ -n "$BASH_VERSION" ]; then
   export -f setROOT

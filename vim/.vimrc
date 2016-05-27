@@ -23,9 +23,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'paranoida/vim-airlineish'
 Plugin 'tpope/vim-fugitive'
 " Plugin 'scrooloose/syntastic'
-Plugin 'paranoida/vim-airlineish'
 Plugin 'taglist.vim'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -42,11 +43,6 @@ filetype plugin on "Vundle stuff over
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-tomorrow
-if $THEME_BACKGROUND == "dark"
-  set background=dark
-else
-  set background=light
-endif
 
 " Plugin configuration
 let g:NERDCompactSexyComs = 1
@@ -55,7 +51,7 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 
 "" Fugitive
-command Greview :Git! diff --staged
+command! Greview :Git! diff --staged
 nnoremap <leader>gr :Greview<cr>
 
 "" Syntastic
@@ -92,7 +88,7 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
-let g:airline_theme = 'airlineish'
+let g:airline_theme = 'base16'
 let g:airline_powerline_fonts = 1
 
 "" Taglist
@@ -139,6 +135,19 @@ autocmd InsertLeave * :call Switchrnu()
 au FocusLost * :call Switchnu()
 au FocusGained * :call Switchrnu()
 
+function! SetBackground()
+  let g:backthemeenv=substitute(substitute(system("tmux showenv -g THEME_BACKGROUND"), "\n", "", "g"), "THEME_BACKGROUND=", "", "g")
+  if g:backthemeenv == "light"
+    set background=light
+  else
+    set background=dark
+  endif
+  if exists(':AirlineRefresh')
+    AirlineRefresh
+  endif
+endfunc
+call SetBackground()
+au FocusGained * :call SetBackground()
 
 "" Convinient window navigation via hjkl
 " nnoremap <C-h> <C-w>h
