@@ -16,7 +16,6 @@ fi
 
 # Default to dark colorscheme - else use mother shells colorscheme
 if [[ -n $TMUX ]]; then
-  echo "running TMUX"
   export THEME_BACKGROUND="$(tmux showenv -g THEME_BACKGROUND | egrep -o "=\S+" | sed 's/=//g')"
   [[ $THEME_BACKGROUND == "dark" ]] && dark
   [[ $THEME_BACKGROUND == "light" ]] && light
