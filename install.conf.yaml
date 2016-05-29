@@ -1,0 +1,28 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+- link:
+    ~/.dotfiles: ''
+    ~/.aliases: aliases/.aliases.sh
+    ~/.bash_aliases: bash/.bash_aliases
+    ~/.bash_profile: bash/.bash_profile
+    ~/.bashrc: bash/.bashrc
+    ~/.config/base16-shell: config/.config/base16-shell
+    ~/.git-completion.bash: git/.git-completion.bash
+    ~/.gitconfig: git/.gitconfig
+    ~/.pythonpath: python/.pythonpath
+    ~/.pythonrc: python/.pythonrc
+    ~/.ssh/config: ssh/.ssh/config
+    ~/.tmux.conf: tmux/.tmux.conf
+    ~/.tmux_solarizedlight_nargoth.conf: tmux/.tmux_solarizedlight_nargoth.conf
+    ~/.tmux_tomorrowdark.conf: tmux/.tmux_tomorrowdark.conf
+    ~/.vim: vim/.vim/
+    ~/.vimrc: vim/.vimrc
+    ~/.gvimrc: vim/.gvimrc
+    ~/.zshrc: zsh/.zshrc
+    ~/.zprezto: prezto/.zprezto
+    ~/.zpreztorc: zsh/.zpreztorc
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
