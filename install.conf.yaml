@@ -5,7 +5,7 @@
 - clean: ['~']
 - link:
     ~/.dotfiles: ''
-    ~/.aliases: aliases/.aliases.sh
+    ~/.aliases.sh: aliases/.aliases.sh
     ~/.bash_aliases: bash/.bash_aliases
     ~/.bash_profile: bash/.bash_profile
     ~/.bashrc: bash/.bashrc
