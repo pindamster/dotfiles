@@ -136,11 +136,17 @@ au FocusLost * :call Switchnu()
 au FocusGained * :call Switchrnu()
 
 function! SetBackground()
-  let g:backthemeenv=substitute(substitute(system("tmux showenv -g THEME_BACKGROUND"), "\n", "", "g"), "THEME_BACKGROUND=", "", "g")
+  if $TMUX != ""
+    let g:backthemeenv=substitute(substitute(system("tmux showenv -g THEME_BACKGROUND"), "\n", "", "g"), "THEME_BACKGROUND=", "", "g")
+  else
+    let g:backthemeenv=$THEME_BACKGROUND
+  endif
   if g:backthemeenv == "light"
     set background=light
-  else
+  elseif g:backthemeenv == "dark"
     set background=dark
+  else
+    echo "g:backthemeenv is not set - make sure scripts are correct"
   endif
   if exists(':AirlineRefresh')
     AirlineRefresh
