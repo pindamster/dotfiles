@@ -49,11 +49,11 @@ function dark()
   BASE16_SHELL="$HOME/.config/base16-shell/base16-tomorrow.dark.sh"
   [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
   if [ -n "$TMUX" ]; then
-    it2proftmux TomorrowDark > /dev/null
+    it2proftmux TomorrowDark
     tmux setenv -g THEME_BACKGROUND dark
-    tmux source ~/.tmux_tomorrowdark.conf > /dev/null
+    tmux source ~/.tmux_tomorrowdark.conf
   else
-    it2prof TomorrowDark > /dev/null
+    it2prof TomorrowDark
   fi
   export THEME_BACKGROUND="dark"
 }
@@ -63,11 +63,11 @@ function light()
   BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.light.sh"
   [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
   if [ -n "$TMUX" ]; then
-    it2proftmux SolarizedLight > /dev/null
+    it2proftmux SolarizedLight
     tmux setenv -g THEME_BACKGROUND light
-    tmux source ~/.tmux_solarizedlight_nargoth.conf > /dev/null
+    tmux source ~/.tmux_solarizedlight_nargoth.conf
   else
-    it2prof SolarizedLight > /dev/null
+    it2prof SolarizedLight
   fi
   export THEME_BACKGROUND="light"
 }
