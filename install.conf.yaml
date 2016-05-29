@@ -26,3 +26,4 @@
     ~/.zpreztorc: zsh/.zpreztorc
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [vim +PluginInstall +qall, Installing vim plugins]
