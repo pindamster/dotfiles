@@ -1,6 +1,7 @@
 - defaults:
     link:
       relink: true
+      create: true
 
 - clean: ['~']
 - link:
@@ -9,7 +10,7 @@
     ~/.bash_aliases: bash/.bash_aliases
     ~/.bash_profile: bash/.bash_profile
     ~/.bashrc: bash/.bashrc
-    ~/.config/base16-shell: config/.config/base16-shell
+    ~/.config: config/.config
     ~/.git-completion.bash: git/.git-completion.bash
     ~/.gitconfig: git/.gitconfig
     ~/.pythonpath: python/.pythonpath
