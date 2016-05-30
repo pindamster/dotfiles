@@ -57,7 +57,7 @@ function dark()
   if [ -n "$TMUX" ]; then
     it2proftmux TomorrowDark
     tmux setenv -g THEME_BACKGROUND dark
-    tmux source ~/.tmux_tomorrowdark.conf
+    tmux source ~/.tmux_tomorrowdark.conf > /dev/null
   else
     it2prof TomorrowDark
   fi
@@ -71,7 +71,7 @@ function light()
   if [ -n "$TMUX" ]; then
     it2proftmux SolarizedLight
     tmux setenv -g THEME_BACKGROUND light
-    tmux source ~/.tmux_solarizedlight_nargoth.conf
+    tmux source ~/.tmux_solarizedlight_nargoth.conf > /dev/null
   else
     it2prof SolarizedLight
   fi
