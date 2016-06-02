@@ -26,6 +26,7 @@ if [ -n "$TMUX" ]; then
   function refresh {                                                                                
     export $(tmux show-environment | grep "^SSH_AUTH_SOCK")                                       
     export $(tmux show-environment | grep "^DISPLAY")                                             
+    export $(tmux show-environment | grep "^THEME_BACKGROUND")
   }                                                                                                 
 else                                                                                                  
   function refresh { }                                                                              
