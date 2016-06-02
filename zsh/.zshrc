@@ -22,6 +22,18 @@ if [[ -n $TMUX ]]; then
 fi
 [[ -n $THEME_BACKGROUND ]] || dark
 
+if [ -n "$TMUX" ]; then                                                                               
+  function refresh {                                                                                
+    export $(tmux show-environment | grep "^SSH_AUTH_SOCK")                                       
+    export $(tmux show-environment | grep "^DISPLAY")                                             
+  }                                                                                                 
+else                                                                                                  
+  function refresh { }                                                                              
+fi
+function preexec {
+  refresh
+}
+
 # PATH extensions
 export BD2JPSIEEKSROOT=/home/rniet/storage03/repos/bd2jpsieeks/build/bin
 export PATH=$BD2JPSIEEKSROOT:$PATH
