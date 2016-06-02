@@ -41,8 +41,14 @@ function pyRootSetup()
   export LD_LIBRARY_PATH=/afs/cern.ch/sw/lcg/external/Boost/1.55.0_python2.7/x86_64-slc6-gcc47-opt/lib:$LD_LIBRARY_PATH 
 }
 
-it2prof() { echo -e "\033]50;SetProfile=$1\a" }
-it2proftmux() { echo -e "\033Ptmux;\033\033]50;SetProfile=$1\007\033\\" }
+function it2prof() {
+  echo -e "\033]50;SetProfile=$1\a"
+}
+
+function it2proftmux() {
+  echo -e "\033Ptmux;\033\033]50;SetProfile=$1\007\033\\"
+}
+
 
 function dark()
 {
@@ -79,3 +85,4 @@ if [ -n "$BASH_VERSION" ]; then
   export -f dark
   export -f light
 fi
+
