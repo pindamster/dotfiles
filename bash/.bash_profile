@@ -1,11 +1,16 @@
-
+# This is not the best way to change the shell, it "causes tons of problems"
+# I use it only on linux systems where I have no root rights to
+# define my shell
+if [ ${OSTYPE:0:6} != "darwin" ]; then
 # Test if private version of zsh exists - otherwise use system installation
-if [[ -f $HOME/software/zsh/bin/zsh-5.2 ]]; then
-  export SHELL=$HOME/software/zsh/bin/zsh-5.2
-  exec $HOME/software/zsh/bin/zsh-5.2
-elif [[ -f /usr/local/bin/zsh ]]; then
-  export SHELL=/usr/local/bin/zsh
-  exec /usr/local/bin/zsh -l
+  if [[ -f $HOME/software/zsh/bin/zsh-5.2 ]]; then
+    export SHELL=$HOME/software/zsh/bin/zsh-5.2
+    exec $HOME/software/zsh/bin/zsh-5.2
+  elif [[ -f /usr/local/bin/zsh ]]; then
+    export SHELL=/usr/local/bin/zsh
+    exec /usr/local/bin/zsh -l
+  fi
+else
 fi
 
 set -o vi
