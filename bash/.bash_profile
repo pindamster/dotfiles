@@ -10,7 +10,6 @@ if [ ${OSTYPE:0:6} != "darwin" ]; then
     export SHELL=/usr/local/bin/zsh
     exec /usr/local/bin/zsh -l
   fi
-else
 fi
 
 set -o vi
