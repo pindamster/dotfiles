@@ -12,6 +12,7 @@
     ~/.bashrc: bash/.bashrc
     ~/.config: config/.config
     ~/.git-completion.bash: git/.git-completion.bash
+    ~/.git-completion.zsh: git/.git-completion.zsh
     ~/.gitconfig: git/.gitconfig
     ~/.pythonpath: python/.pythonpath
     ~/.pythonrc: python/.pythonrc
