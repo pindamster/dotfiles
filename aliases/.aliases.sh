@@ -41,6 +41,13 @@ function pyRootSetup()
   export LD_LIBRARY_PATH=/afs/cern.ch/sw/lcg/external/Boost/1.55.0_python2.7/x86_64-slc6-gcc47-opt/lib:$LD_LIBRARY_PATH 
 }
 
+function py3root6Setup()
+{
+  cd /opt/rh/miniconda/envs/py3root6
+  source /opt/rh/miniconda/scripts/py3root6.sh
+  cd -
+}
+
 function it2prof() {
   echo -e "\033]50;SetProfile=$1\a"
 }
