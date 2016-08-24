@@ -39,3 +39,5 @@ function preexec {
 export BD2JPSIEEKSROOT=/home/rniet/storage03/repos/bd2jpsieeks/build/bin
 export PATH=$BD2JPSIEEKSROOT:$PATH
 export PATH="/home/rniet/anaconda/bin:$PATH"
+
+bindkey "^R" history-incremental-search-backward
