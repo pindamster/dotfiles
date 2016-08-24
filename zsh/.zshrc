@@ -14,6 +14,10 @@ if [[ -s "$HOME/.aliases.sh" ]]; then
   source "$HOME/.aliases.sh"
 fi
 
+if [[ -s "$HOME/.pythonpath" ]]; then
+  source "$HOME/.pythonpath" ]]
+fi
+
 # Default to dark colorscheme - else use mother shells colorscheme
 if [[ -n $TMUX ]]; then
   export THEME_BACKGROUND="$(tmux showenv -g THEME_BACKGROUND | egrep -o "=\S+" | sed 's/=//g')"
