@@ -1,3 +1,4 @@
 #Make LHCbPythonModules available in python
 export PYTHONPATH=/Users/rniet/Repositories/git/e5/LHCbAnalysis/lhcbpythonmodules:$PYTHONPATH
 export PYTHONPATH=/home/rniet/storage03/repos/bd2jpsieeks/python:$PYTHONPATH
+export PYTHONPATH=/home/rniet/storage03/repos/gangautils:$PYTHONPATH

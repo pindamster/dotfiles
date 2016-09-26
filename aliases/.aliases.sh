@@ -41,11 +41,32 @@ function pyRootSetup()
   export LD_LIBRARY_PATH=/afs/cern.ch/sw/lcg/external/Boost/1.55.0_python2.7/x86_64-slc6-gcc47-opt/lib:$LD_LIBRARY_PATH 
 }
 
+function py2root6Setup()
+{
+  cd /opt/rh/miniconda/envs/py2root6
+  source /opt/rh/miniconda/scripts/py2root6.sh
+  cd -
+
+  export DOOFITSYS=/doosoft/doofit/ROOT_v6.06.00/
+  export DOOCORESYS=/doosoft/doocore/ROOT_v6.06.00/
+  export DOOSELECTIONSYS=/doosoft/dooselection/ROOT_v6.04.00/
+
+  export PATH=$PATH:$DOOCORESYS/bin:$DOOFITSYS/bin:$DOOSELECTIONSYS/bin
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$DOOCORESYS/lib:$DOOFITSYS/lib:$DOOSELECTIONSYS/lib
+}
+
 function py3root6Setup()
 {
   cd /opt/rh/miniconda/envs/py3root6
   source /opt/rh/miniconda/scripts/py3root6.sh
   cd -
+
+  export DOOFITSYS=/doosoft/doofit/ROOT_v6.06.00/
+  export DOOCORESYS=/doosoft/doocore/ROOT_v6.06.00/
+  export DOOSELECTIONSYS=/doosoft/dooselection/ROOT_v6.04.00/
+
+  export PATH=$PATH:$DOOCORESYS/bin:$DOOFITSYS/bin:$DOOSELECTIONSYS/bin
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$DOOCORESYS/lib:$DOOFITSYS/lib:$DOOSELECTIONSYS/lib
 }
 
 function it2prof() {
