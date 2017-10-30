@@ -48,3 +48,5 @@ export PATH="$HOME/.local/bin:$PATH"
 bindkey "^R" history-incremental-search-backward
 
 export LANG="en_US.UTF-8"
+
+bindkey -e

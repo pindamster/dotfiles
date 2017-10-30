@@ -2,3 +2,6 @@
 export PYTHONPATH=/Users/rniet/Repositories/git/e5/LHCbAnalysis/lhcbpythonmodules:$PYTHONPATH
 export PYTHONPATH=/home/rniet/storage03/repos/bd2jpsieeks/python:$PYTHONPATH
 export PYTHONPATH=/home/rniet/storage03/repos/gangautils:$PYTHONPATH
+export PYTHONPATH=/home/rniet/storage03/repos/b2ccksfitter/python:$PYTHONPATH
+
+export PYTHONPATH=/home/rniet/repos/dopy

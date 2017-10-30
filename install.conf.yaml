@@ -15,6 +15,7 @@
     ~/.git-completion.zsh: git/.git-completion.zsh
     ~/.gitconfig: git/.gitconfig
     ~/.ipython: ipython/.ipython
+    ~/.jupyter: jupyter/.jupyter
     ~/.pythonpath: python/.pythonpath
     ~/.pythonrc: python/.pythonrc
     ~/.ssh/config: ssh/.ssh/config
