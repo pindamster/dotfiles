@@ -4,7 +4,7 @@ if [[ -s "$HOME/.aliases.sh" ]]; then
 fi
 
 # Aliases for file listing (when using bash)
-[[ $OSTYPE != "darwin15" ]] && alias ls='ls --color'
-[[ $OSTYPE == "darwin15" ]] && alias ls='ls -G'
+[[ $OSTYPE != "darwin17" ]] && alias ls='ls --color'
+[[ $OSTYPE == "darwin17" ]] && alias ls='ls -G'
 alias ll='ls -lh'
 alias la='ll -a'

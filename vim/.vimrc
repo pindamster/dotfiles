@@ -12,7 +12,7 @@ set softtabstop=2     " Use 2 colums for tab with TAB
 set splitbelow
 set splitright
 set laststatus=2      " Display status bar always
-set cursorline
+" set cursorline
 set relativenumber   
 set hidden
 
@@ -88,7 +88,7 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
-let g:airline_theme = 'base16'
+let g:airline_theme = 'angr'
 let g:airline_powerline_fonts = 1
 
 "" Taglist
@@ -182,3 +182,8 @@ nnoremap <Leader>t :tabnew %<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <F8> :TagbarToggle<CR>
 nnoremap <Leader>o :CtrlPMixed<CR>
+
+" Ugly fix
+highlight LineNr ctermfg=grey ctermbg=black
+" hi clear LineNr
+hi clear CursorLineNr
