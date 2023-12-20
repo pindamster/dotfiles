@@ -39,12 +39,6 @@ function preexec {
   refresh
 }
 
-# PATH extensions
-export BD2JPSIEEKSROOT=/home/rniet/storage03/repos/bd2jpsieeks/build/bin
-export PATH=$BD2JPSIEEKSROOT:$PATH
-export PATH="/home/rniet/anaconda/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
 bindkey "^R" history-incremental-search-backward
 
 export LANG="en_US.UTF-8"
