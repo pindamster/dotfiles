@@ -44,3 +44,6 @@ bindkey "^R" history-incremental-search-backward
 export LANG="en_US.UTF-8"
 
 bindkey -e
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
