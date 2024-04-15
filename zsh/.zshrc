@@ -38,7 +38,7 @@ fi
 function preexec {
   refresh
 }
-
+bindkey "^[[3~" delete-char
 bindkey "^R" history-incremental-search-backward
 
 export LANG="en_US.UTF-8"
