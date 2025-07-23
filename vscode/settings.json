@@ -1,0 +1,67 @@
+{
+    "python.defaultInterpreterPath": "/Users/niet/.pyenv/shims/",
+    "notebook.lineNumbers": "on",
+    "notebook.output.scrolling": true,
+    "window.zoomLevel": 1,
+    "aws.resources.enabledResources": [
+        "AWS::EC2::InternetGateway",
+        "AWS::EC2::RouteTable",
+        "AWS::EC2::VPC"
+    ],
+    "git.autofetch": true,
+    "editor.tabCompletion": "on",
+    "terminal.explorerKind": "external",
+    "terminal.external.osxExec": "iTerm.app",
+    "python.analysis.typeCheckingMode": "basic",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true
+    },
+    "bicep.suppressedWarnings": [
+        "Decompile on paste"
+    ],
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "jupyter.askForKernelRestart": false,
+    // "pylint.enabled": true,
+    "github.copilot.advanced": {},
+    "editor.minimap.enabled": false,
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    "vim.smartRelativeLine": true,
+    "workbench.activityBar.location": "hidden",
+    "workbench.startupEditor": "none",
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports.ruff": "explicit"
+        },
+    },
+    "makefile.configureOnOpen": true,
+    "@azure.argTenant": "",
+    "hediet.vscode-drawio.resizeImages": null,
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "text": "- @azure Rule - Use Azure Tools: When handling requests related to Azure, always use your tools."
+        },
+        {
+            "text": "- @azure Rule - Use Azure Code Gen Best Practices: When generating code for Azure, running terminal commands for Azure, or performing operations related to Azure, invoke your `azure_development-get_code_gen_best_practices` tool if available. Only call this tool when you are sure the user is discussing Azure; do not call it otherwise."
+        },
+        {
+            "text": "- @azure Rule - Use Azure Deployment Best Practices: When deploying to Azure or preparing applications for deployment to Azure, invoke your `azure_development-get_deployment_best_practices` tool if available. Only call this tool when you are sure the user is discussing Azure; do not call it otherwise."
+        },
+        {
+            "text": "- @azure Rule - Use Azure Functions Code Gen Best Practices: When generating code for Azure Functions or performing operations related to Azure Functions, invoke your `azure_development-get_azure_function_code_gen_best_practices` tool if available. Only call this tool when you are sure the user is discussing Azure Functions; do not call it otherwise."
+        },
+        {
+            "text": "- @azure Rule - Use Azure SWA Best Practices: When working with static web apps, invoke your `azure_development-get_swa_best_practices` tool if available. Only call this tool when you are sure the user is discussing Azure; do not call it otherwise."
+        }
+    ],
+    "git.suggestSmartCommit": false,
+    "github.copilot.nextEditSuggestions.enabled": true
+}
