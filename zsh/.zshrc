@@ -1,19 +1,15 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Source Prezto.
+ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+ fi
 
-#Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
- source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 export EDITOR=vim
 export VISUAL=vim
+export LANG="en_US.UTF-8"
 
-# From homebrew
+# Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
 # User defined aliases
@@ -21,12 +17,8 @@ if [[ -s "$HOME/.aliases.sh" ]]; then
   source "$HOME/.aliases.sh"
 fi
 
-if [[ -s "$HOME/.pythonpath" ]]; then
-  source "$HOME/.pythonpath" ]]
-fi
-
 # Default to dark colorscheme - else use mother shells colorscheme
-if [[ -n $TMUX ]]; then
+if [[ -n "$TMUX" ]]; then
   export THEME_BACKGROUND="$(tmux showenv -g THEME_BACKGROUND | egrep -o "=\S+" | sed 's/=//g')"
   [[ $THEME_BACKGROUND == "dark" ]] && dark
   [[ $THEME_BACKGROUND == "light" ]] && light
@@ -45,16 +37,16 @@ fi
 function preexec {
   refresh
 }
+
+# Key Mappings, check out:
+# https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html#index-widgets_002c-standard
+# bindkey -e # Emacs key bindings (instead of vi)
 bindkey "^[[3~" delete-char
 bindkey "^R" history-incremental-search-backward
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^[F" forward-word
+bindkey "^[B" backward-word
 
-export LANG="en_US.UTF-8"
-
-bindkey -e
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Created by `pipx` on 2025-04-01 15:04:55
+export PATH="$PATH:/Users/niet/.local/bin"

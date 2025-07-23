@@ -1,6 +1,8 @@
 alias ls='ls --color'
 alias ll='ls -l'
 alias la='ll -a'
+# alias vi='nvim'
+# alias vim='nvim'
 
 function it2prof() {
   echo -e "\033]50;SetProfile=$1\a"
