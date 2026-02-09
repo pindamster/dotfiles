@@ -1,6 +1,5 @@
-[user]
-	name = Niet, Ramon
-	email = ramon.niet.extern@congstar.net
+[include]
+    path               = ~/.gitconfig.local
 
 [sequence]
     editor             = vim
