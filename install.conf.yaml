@@ -28,6 +28,9 @@
     ~/.zshrc: zsh/.zshrc
     ~/.zprezto: prezto/.zprezto
     ~/.zpreztorc: zsh/.zpreztorc
+    ~/.claude/CLAUDE.md: claude/CLAUDE.md
+    ~/.claude/settings.json: claude/settings.json
+    ~/.claude/skills: claude/skills
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [vim +PluginInstall +qall, Installing vim plugins]
