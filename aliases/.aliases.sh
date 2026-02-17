@@ -1,4 +1,5 @@
 alias ls='ls --color'
+alias yolo='claude --dangerously-skip-permissions'
 alias ll='ls -l'
 alias la='ll -a'
 # alias vi='nvim'
