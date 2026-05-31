@@ -30,7 +30,7 @@
     ~/.zpreztorc: zsh/.zpreztorc
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     ~/.claude/settings.json: claude/settings.json
-    ~/.claude/skills: claude/skills
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [./claude/setup-skills.sh, Linking Claude skills]
   - [vim +PluginInstall +qall, Installing vim plugins]
