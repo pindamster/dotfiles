@@ -32,5 +32,4 @@
     ~/.claude/settings.json: claude/settings.json
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [./claude/setup-skills.sh, Linking Claude skills]
   - [vim +PluginInstall +qall, Installing vim plugins]
