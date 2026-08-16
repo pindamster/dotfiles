@@ -9,6 +9,9 @@ theme = Vesper
 background-opacity = 0.88
 background-blur = 24
 
+# Transparenz an/aus schalten (wie Cmd+U in iTerm2)
+keybind = cmd+u=toggle_background_opacity
+
 # Luft um den Text
 window-padding-x = 12
 window-padding-y = 10
