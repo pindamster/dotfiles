@@ -1,7 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "skipDangerousModePermissionPrompt": true,
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/rniet/.claude/statusline-command.sh"
   }
 }
