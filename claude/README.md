@@ -23,6 +23,18 @@ real `~/.claude/skills`. Pointing it at a directory inside this repo makes the r
 path resolve from the repo's physical location instead, so the links dangle and Claude
 Code silently skips those skills.
 
+## Herdr integration
+
+The `hooks.SessionStart` entry in `settings.json` is **written by herdr**, not by hand.
+Herdr installs `~/.claude/hooks/herdr-agent-state.sh` (marked `managed by herdr`, carrying
+an integration version) and registers the hook here. Because `settings.json` is symlinked
+into this repo, herdr edits the tracked file directly, so the entry reappears after every
+integration update -- leave it minified as herdr writes it to keep the diff empty.
+
+The hook script itself is deliberately **not** vendored here: herdr overwrites it on update,
+and it no-ops unless `HERDR_ENV`, `HERDR_SOCKET_PATH`, and `HERDR_PANE_ID` are set. On a new
+machine, herdr reinstalls it.
+
 ## New machine
 
 ```sh
