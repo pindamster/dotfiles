@@ -26,9 +26,11 @@ There is no build, lint, or test step. The only command is `./install`. After ed
 | `~/.aerospace.toml` | `aerospace/` | AeroSpace tiling WM |
 | `~/.config/ghostty/config` | `ghostty/` | Ghostty terminal (Vesper theme, transparency + blur) |
 | `~/.config/herdr/config.toml` | `herdr/` | Herdr agent multiplexer (vesper theme, transparent panels) |
-| `~/.claude/CLAUDE.md`, `~/.claude/settings.json`, `~/.claude/skills` | `claude/` | Claude Code (global instructions, settings, skills) |
+| `~/.claude/CLAUDE.md`, `~/.claude/settings.json` | `claude/` | Claude Code (global instructions, settings) |
 
 **Not currently linked** (declared in config but overridden by a real file on this machine): ipython, jupyter, ssh/config.
+
+Claude Code **skills are not in this repo**. They live in `pindamster/claude-skills`, which is cloned directly to `~/.claude/skills` (that path must be a real directory, not a symlink -- see `claude/README.md`).
 
 `~/.config` is deliberately **not** linked as a whole directory -- individual entries below it (`base16-shell`, `ghostty/config`, `herdr/config.toml`) are linked one by one so `~/.config` stays a real directory that other tools can write into.
 
