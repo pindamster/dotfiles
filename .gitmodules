@@ -1,6 +1,6 @@
 [submodule "prezto/.zprezto"]
 	path = prezto/.zprezto
-	url = git@github.com:Nargoth/prezto.git
+	url = https://github.com/sorin-ionescu/prezto.git
 	ignore = dirty
 [submodule "config/.config/base16-shell"]
 	path = config/.config/base16-shell
