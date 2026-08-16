@@ -28,9 +28,9 @@ There is no build, lint, or test step. The only command is `./install`. After ed
 | `~/.config/herdr/config.toml` | `herdr/` | Herdr agent multiplexer (vesper theme, transparent panels) |
 | `~/.claude/CLAUDE.md`, `~/.claude/settings.json`, `~/.claude/skills` | `claude/` | Claude Code (global instructions, settings, skills) |
 
-**Not currently linked** (declared in config but missing on disk or overridden): bash, ipython, jupyter, python, ssh/config, `~/.config`, `~/.dotfiles`.
+**Not currently linked** (declared in config but overridden by a real file on this machine): ipython, jupyter, ssh/config.
 
-**Broken symlinks**: `~/.tmux_solarizedlight_nargoth.conf` and `~/.tmux_tomorrowdark.conf` (source files deleted from repo).
+`~/.config` is deliberately **not** linked as a whole directory -- individual entries below it (`base16-shell`, `ghostty/config`, `herdr/config.toml`) are linked one by one so `~/.config` stays a real directory that other tools can write into.
 
 ## Repo Layout
 
@@ -56,4 +56,5 @@ Four submodules (dotbot, prezto, base16-shell, Vundle.vim). Always use `git subm
 - Vim plugins: Managed by Vundle (not vim-plug or lazy.nvim). Add plugins to `.vimrc` then run `vim +PluginInstall +qall`.
 - tmux prefix: `Ctrl-A` (not the default `Ctrl-B`).
 - AeroSpace workspaces: Named workspaces (term, code, browse, comms, private, mail, track) with vim-style hjkl navigation.
-- Theme switching: `dark()` and `light()` shell functions toggle iTerm2 profiles and base16 color schemes, but the tmux theme files they reference are currently broken (deleted).
+- Theme switching: `dark()` and `light()` shell functions toggle iTerm2 profiles and base16 color schemes. iTerm2 is legacy -- the daily driver is Ghostty, themed via `ghostty/.config/ghostty/config`.
+- Dotbot must stay reasonably current: versions before v1.20 vendor a PyYAML that crashes on Python 3.10+ (`module 'collections' has no attribute 'Hashable'`).
