@@ -11,6 +11,8 @@
     ~/.bash_profile: bash/.bash_profile
     ~/.bashrc: bash/.bashrc
     ~/.config: config/.config
+    ~/.config/ghostty/config: ghostty/.config/ghostty/config
+    ~/.config/herdr/config.toml: herdr/.config/herdr/config.toml
     ~/.git-completion.bash: git/.git-completion.bash
     ~/.git-completion.zsh: git/.git-completion.zsh
     ~/.gitconfig: git/.gitconfig

@@ -24,6 +24,8 @@ There is no build, lint, or test step. The only command is `./install`. After ed
 | `~/.tmux.conf` | `tmux/` | tmux (prefix: Ctrl-A, vi keys) |
 | `~/.gitconfig`, `~/.git-completion.*` | `git/` | Git |
 | `~/.aerospace.toml` | `aerospace/` | AeroSpace tiling WM |
+| `~/.config/ghostty/config` | `ghostty/` | Ghostty terminal (Vesper theme, transparency + blur) |
+| `~/.config/herdr/config.toml` | `herdr/` | Herdr agent multiplexer (vesper theme, transparent panels) |
 | `~/.claude/CLAUDE.md`, `~/.claude/settings.json`, `~/.claude/skills` | `claude/` | Claude Code (global instructions, settings, skills) |
 
 **Not currently linked** (declared in config but missing on disk or overridden): bash, ipython, jupyter, python, ssh/config, `~/.config`, `~/.dotfiles`.

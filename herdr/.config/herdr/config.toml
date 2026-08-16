@@ -1,0 +1,10 @@
+# Herdr Konfiguration
+# Reload: herdr server reload-config
+
+[theme]
+# Passend zum Ghostty-Theme Vesper
+name = "vesper"
+
+[theme.custom]
+# Panels transparent lassen, damit Ghostty-Transparenz durchkommt
+panel_bg = "reset"

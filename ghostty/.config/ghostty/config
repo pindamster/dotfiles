@@ -1,0 +1,21 @@
+# Ghostty Konfiguration
+# Reload im laufenden Fenster: Cmd+Shift+,
+# Alle Themes durchblättern: ghostty +list-themes
+
+# Farbschema (nahezu schwarz, warme Akzente)
+theme = Vesper
+
+# Transparenz + Blur: Desktop schimmert dezent durch
+background-opacity = 0.88
+background-blur = 24
+
+# Luft um den Text
+window-padding-x = 12
+window-padding-y = 10
+window-padding-balance = true
+
+# Optional, bei Bedarf einkommentieren:
+# macos-titlebar-style = hidden
+# font-family = JetBrainsMono Nerd Font
+# font-size = 14
+# cursor-style = block
