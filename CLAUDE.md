@@ -14,33 +14,30 @@ Personal dotfiles managed with **Dotbot**. Each top-level directory groups confi
 
 There is no build, lint, or test step. The only command is `./install`. After editing any config file the change is live immediately (files are symlinked), but run `./install` after changing `install.conf.yaml` or adding new link targets.
 
-## Actively Symlinked (what's actually in use on this system)
+## Managed Symlinks
 
 | Symlink | Source dir | Tool |
 |---------|-----------|------|
 | `~/.zshrc`, `~/.zpreztorc`, `~/.zprezto` | `zsh/`, `prezto/` | Zsh + Prezto |
-| `~/.aliases.sh` | `aliases/` | Shell aliases (`dark`/`light` theme switchers, ls aliases) |
+| `~/.aliases.sh` | `aliases/` | Shared shell aliases loaded by Zsh |
 | `~/.vimrc`, `~/.gvimrc`, `~/.vim` | `vim/` | Vim + Vundle |
 | `~/.tmux.conf` | `tmux/` | tmux (prefix: Ctrl-A, vi keys) |
 | `~/.gitconfig`, `~/.git-completion.*` | `git/` | Git |
 | `~/.aerospace.toml` | `aerospace/` | AeroSpace tiling WM |
-| `~/.config/ghostty/config` | `ghostty/` | Ghostty terminal (Vesper theme, transparency + blur) |
-| `~/.config/herdr/config.toml` | `herdr/` | Herdr agent multiplexer (vesper theme, transparent panels) |
-| `~/.claude/CLAUDE.md`, `~/.claude/settings.json` | `claude/` | Claude Code (global instructions, settings) |
 
-**Not currently linked** (declared in config but overridden by a real file on this machine): ipython, jupyter, ssh/config.
+Ghostty, Herdr, Claude Code, SSH, iTerm2, and VS Code configs are kept for reference or manual setup, not linked by the installer.
 
 Claude Code **skills are not in this repo**. They live in `pindamster/claude-skills`, which is cloned directly to `~/.claude/skills` (that path must be a real directory, not a symlink -- see `claude/README.md`).
 
-`~/.config` is deliberately **not** linked as a whole directory -- individual entries below it (`base16-shell`, `ghostty/config`, `herdr/config.toml`) are linked one by one so `~/.config` stays a real directory that other tools can write into.
+`~/.config` is deliberately **not** linked as a whole directory so other tools can write into it.
 
 ## Repo Layout
 
 ```
-install.conf.yaml   # Dotbot config -- the single source of truth for all symlinks
+install.conf.yaml   # Dotbot config -- the source of truth for managed symlinks
 install             # Dotbot bootstrap script
 dotbot/             # Submodule: github.com/anishathalye/dotbot
-prezto/.zprezto     # Submodule: custom Prezto fork (Nargoth/prezto)
+prezto/.zprezto      # Submodule: github.com/sorin-ionescu/prezto
 vim/.vim/bundle/    # Gitignored; populated by Vundle at install time
 ```
 
@@ -50,13 +47,13 @@ Config directories (`aerospace/`, `aliases/`, `claude/`, `git/`, `tmux/`, `vim/`
 
 ## Git Submodules
 
-Four submodules (dotbot, prezto, base16-shell, Vundle.vim). Always use `git submodule update --init --recursive` after cloning or pulling submodule pointer changes. The `./install` script handles this automatically.
+Three top-level submodules (Dotbot, Prezto, Vundle.vim). The `./install` script initializes them recursively before linking.
 
 ## Key Conventions
 
-- Shell: Zsh is the primary shell; bash configs exist but are not active.
+- Shell: Zsh is the primary shell. Bash uses the system defaults.
+- Python: Use `uv` for Python versions and project environments; no global Python startup files are linked.
 - Vim plugins: Managed by Vundle (not vim-plug or lazy.nvim). Add plugins to `.vimrc` then run `vim +PluginInstall +qall`.
 - tmux prefix: `Ctrl-A` (not the default `Ctrl-B`).
 - AeroSpace workspaces: Named workspaces (term, code, browse, comms, private, mail, track) with vim-style hjkl navigation.
-- Theme switching: `dark()` and `light()` shell functions toggle iTerm2 profiles and base16 color schemes. iTerm2 is legacy -- the daily driver is Ghostty, themed via `ghostty/.config/ghostty/config`.
 - Dotbot must stay reasonably current: versions before v1.20 vendor a PyYAML that crashes on Python 3.10+ (`module 'collections' has no attribute 'Hashable'`).

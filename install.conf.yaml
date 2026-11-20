@@ -1,26 +1,13 @@
 - defaults:
     link:
-      relink: true
       create: true
 
-- clean: ['~']
 - link:
-    ~/.dotfiles: ''
+    ~/.aerospace.toml: aerospace/.aerospace.toml
     ~/.aliases.sh: aliases/.aliases.sh
-    ~/.bash_aliases: bash/.bash_aliases
-    ~/.bash_profile: bash/.bash_profile
-    ~/.bashrc: bash/.bashrc
-    ~/.config/base16-shell: config/.config/base16-shell
-    ~/.config/ghostty/config: ghostty/.config/ghostty/config
-    ~/.config/herdr/config.toml: herdr/.config/herdr/config.toml
     ~/.git-completion.bash: git/.git-completion.bash
     ~/.git-completion.zsh: git/.git-completion.zsh
     ~/.gitconfig: git/.gitconfig
-    ~/.ipython: ipython/.ipython
-    ~/.jupyter: jupyter/.jupyter
-    ~/.pythonpath: python/.pythonpath
-    ~/.pythonrc: python/.pythonrc
-    ~/.ssh/config: ssh/.ssh/config
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.vim: vim/.vim/
     ~/.vimrc: vim/.vimrc
@@ -28,8 +15,5 @@
     ~/.zshrc: zsh/.zshrc
     ~/.zprezto: prezto/.zprezto
     ~/.zpreztorc: zsh/.zpreztorc
-    ~/.claude/CLAUDE.md: claude/CLAUDE.md
-    ~/.claude/settings.json: claude/settings.json
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [vim +PluginInstall +qall, Installing vim plugins]
+   - [vim +PluginInstall +qall, Installing vim plugins]
