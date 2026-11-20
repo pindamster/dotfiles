@@ -6,7 +6,8 @@
     },
     {
         "key": "cmd+k",
-        "command": "jupyter.interactive.clearAllCells"
+        "command": "jupyter.interactive.clearAllCells",
+        "when": "never"
     },
     {
         "key": "ctrl+cmd+r",
@@ -50,12 +51,12 @@
     {
         "key": "space ,",
         "command": "workbench.action.showAllEditors",
-        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
     },
     {
         "key": "space e",
         "command": "runCommands",
-        "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus",
         "args": {
             "commands": [
                 "workbench.action.toggleSidebarVisibility",
@@ -128,7 +129,7 @@
     {
         "key": "space space",
         "command": "workbench.action.quickOpen",
-        "when": "vim.mode == 'Normal' && ( editorTextFocus || !inputFocus )"
+        "when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
     },
     {
         "key": "space g d",
@@ -296,13 +297,29 @@
             "text": "\u001bB"
         },
         "when": "terminalFocus"
-    }
+    },
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\\\r\n"
+        },
+        "when": "terminalFocus"
+    },
     // not working
     // {
     //     "key": "alt+cmd+up",
     //     "command": "interactive.history.focus",
     //     "when": "",
     // },
+    {
+        "key": "cmd+shift+i",
+        "command": "workbench.action.chat.toggle"
+    },
+    {
+        "key": "cmd+j",
+        "command": "workbench.action.terminal.toggleTerminal"
+    }
     // {
     //     "key": "alt+cmd+down",
     //     "command": "interactive.input.focus",
