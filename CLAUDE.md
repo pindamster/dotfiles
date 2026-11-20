@@ -24,6 +24,7 @@ There is no build, lint, or test step. The only command is `./install`. After ed
 | `~/.tmux.conf` | `tmux/` | tmux (prefix: Ctrl-A, vi keys) |
 | `~/.gitconfig`, `~/.git-completion.*` | `git/` | Git |
 | `~/.aerospace.toml` | `aerospace/` | AeroSpace tiling WM |
+| `~/.config/opencode/AGENTS.md` | `agents/` | Shared agent instructions |
 
 Ghostty, Herdr, Claude Code, SSH, iTerm2, and VS Code configs are kept for reference or manual setup, not linked by the installer.
 
