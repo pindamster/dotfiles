@@ -10,7 +10,7 @@
     "verbosity": "low"
   },
   "tabs": {
-    "mode": "on",
+    "mode": "auto",
     "scope": "cwd",
     "layout": "horizontal"
   },
