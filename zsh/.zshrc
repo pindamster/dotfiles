@@ -49,14 +49,6 @@ bindkey "^[B" backward-word
 # Created by `pipx` on 2025-04-01 15:04:55
 export PATH="$PATH:/Users/niet/.local/bin"
 
-# glab, jira-cli and confluence-cli keep their logins in ~/.devcontainer-logins, the folder the
-# dev containers mount too: one login for this machine and every container, no Keychain.
-export GLAB_CONFIG_DIR="$HOME/.devcontainer-logins/glab"
-export JIRA_CONFIG_FILE="$HOME/.devcontainer-logins/jira/.config.yml"
-export CONFLUENCE_CONFIG_DIR="$HOME/.devcontainer-logins/confluence-cli"
-export NETRC="$HOME/.devcontainer-logins/netrc"
-export CONFLUENCE_KEYCHAIN=off
-
 # Working Log Functions
 WORKING_LOGS_DIR="/Users/rniet/Library/CloudStorage/OneDrive-congstar/working_logs"
 
