@@ -19,7 +19,9 @@ AeroSpace separately and grant macOS Accessibility permission when prompted.
 
 The shared `agents/AGENTS.md` is linked at `~/.config/opencode/AGENTS.md`.
 `opencode/cli.json` is a snapshot for manual setup; the installer leaves the
-live OpenCode CLI settings alone.
+live OpenCode CLI settings alone. A symlink would not survive: OpenCode saves
+`cli.json` by writing a temp file and renaming it over the path, which replaces
+the link with a regular file.
 
 Other configs in the repo are not installed automatically. For the legacy iTerm2
 config, use General → Preferences → Load file here.

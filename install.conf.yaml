@@ -6,7 +6,6 @@
     ~/.aerospace.toml: aerospace/.aerospace.toml
     ~/.aliases.sh: aliases/.aliases.sh
     ~/.config/opencode/AGENTS.md: agents/AGENTS.md
-    ~/.config/opencode/cli.json: opencode/cli.json
     ~/.git-completion.bash: git/.git-completion.bash
     ~/.git-completion.zsh: git/.git-completion.zsh
     ~/.gitconfig: git/.gitconfig
